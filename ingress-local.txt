@@ -1,0 +1,4 @@
+posts.com'da çalıştığı için minikube ip buraya girilmesi lazım
+
+
+c-->windows-->system32--->drivers--->etc--->hosts
