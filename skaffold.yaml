@@ -1,0 +1,40 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: mini-microservice
+build:
+  artifacts:
+  - image: furkanmeydan/client
+    context: client
+    docker:
+      dockerfile: Dockerfile
+  - image: furkanmeydan/comments
+    context: comments
+    docker:
+      dockerfile: Dockerfile
+  - image: furkanmeydan/event-bus
+    context: event-bus
+    docker:
+      dockerfile: Dockerfile
+  - image: furkanmeydan/moderation
+    context: moderation
+    docker:
+      dockerfile: Dockerfile
+  - image: furkanmeydan/posts
+    context: posts
+    docker:
+      dockerfile: Dockerfile
+  - image: furkanmeydan/query
+    context: query
+    docker:
+      dockerfile: Dockerfile
+manifests:
+  rawYaml:
+  - infra/k8s/client-depl.yaml
+  - infra/k8s/comments-depl.yaml
+  - infra/k8s/event-bus-depl.yaml
+  - infra/k8s/ingress-srv.yaml
+  - infra/k8s/moderation-depl.yaml
+  - infra/k8s/posts-depl.yaml
+  - infra/k8s/posts-srv.yaml
+  - infra/k8s/query-depl.yaml

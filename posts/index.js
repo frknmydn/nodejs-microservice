@@ -38,6 +38,7 @@ app.post('/posts/create',async (req,res) =>{
 app.post('/events', (req,res) =>{
     
     console.log('Received event', req.body.type);
+    
 
     res.send({});
 
@@ -47,5 +48,6 @@ app.post('/events', (req,res) =>{
 
 
 app.listen(4000, () => {
+    console.log('sa')
     console.log('listening on 4000');
 });
